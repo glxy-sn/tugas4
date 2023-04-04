@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas4/anggota.dart';
+import 'package:tugas4/playlist.dart';
 import 'package:tugas4/stopwatch.dart';
 
 class HomePage extends StatefulWidget {
@@ -47,8 +48,13 @@ class _HomePageState extends State<HomePage> {
               height: 16.0,
             ),
             ElevatedButton(
-              onPressed: () {},
-              child: Text('Daftar situs rekomendasi gambar dan link'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SongPage()),
+                );
+              },
+              child: Text('Playlist Lagu'),
             ),
             SizedBox(
               height: 16.0,
