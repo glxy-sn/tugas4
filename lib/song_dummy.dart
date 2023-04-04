@@ -1,18 +1,18 @@
-class GameStore {
+class Song {
     String name;
     String releaseDate;
     List<String> genre;
     String about;
-    List<String> imageUrls;
-    String linkSpotify;
+    String imageURL;
+    String spotifyLink;
 
-    GameStore({
+    Song({
         required this.name,
         required this.releaseDate,
         required this.genre,
         required this.about,
-        required this.imageUrls,
-        required this.linkSpotify,
+        required this.imageURL,
+        required this.spotifyLink,
     });
 }
 
