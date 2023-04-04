@@ -33,7 +33,7 @@ class _DetailPageState extends State<DetailPage> {
                       return Container(
                         padding: EdgeInsets.symmetric(horizontal: 8),
                         child: Image.network(
-                          widget.song.imageURL,
+                          widget.song.imageURL[index],
                           fit: BoxFit.cover,
                         ),
                       );

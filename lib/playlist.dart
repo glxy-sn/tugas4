@@ -33,7 +33,7 @@ class SongPage extends StatelessWidget {
                 },
                 child: GridTile(
                   child: Image.network(
-                    song.imageURL,
+                    song.imageURL[0],
                     fit: BoxFit.cover,
                   ),
                   footer: GridTileBar(
