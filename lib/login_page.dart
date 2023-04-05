@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tugas4/homepage.dart';
+import 'package:tugas4/dashboard.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -105,9 +105,9 @@ class _LoginPageState extends State<LoginPage> {
               setState(() {
                 isLoginSuccess = true;
                 text = "Login Sukses!";
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => Dashboard()),
                 );
               });
             }else if (username != "123200052"){

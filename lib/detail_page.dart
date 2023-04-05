@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas4/song_dummy.dart';
+import 'package:favorite_button/favorite_button.dart';
 
 class DetailPage extends StatefulWidget {
   final Song song;
@@ -15,11 +16,28 @@ class _DetailPageState extends State<DetailPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.song.name),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14.0),
+            child: FavoriteButton(
+              isFavorite: false,
+              iconSize: 36,
+              //iconDisabledColor: Colors.white,
+              valueChanged: (_isFavorite) {
+                print('Is Favorite : $_isFavorite');
+              },
+            ),
+          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 14.0),
+          //   child: Icon(Icons.favorite),
+          // )
+        ],
       ),
       body: ListView(
-          children: [Column(
+          padding: EdgeInsets.symmetric(vertical: 8),
+          children: [
+            Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(15.0),
@@ -28,7 +46,7 @@ class _DetailPageState extends State<DetailPage> {
                   width: MediaQuery.of(context).size.width,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 3,
+                    itemCount: 1,
                     itemBuilder: (context, index) {
                       return Container(
                         padding: EdgeInsets.symmetric(horizontal: 8),

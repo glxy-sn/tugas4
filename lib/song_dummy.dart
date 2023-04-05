@@ -26,7 +26,7 @@ var songList = [
         genre: ['Pop', 'Alternative'],
         about: 'A breakout hit by Olivia Rodrigo, exploring the feelings of heartbreak and betrayal after a breakup',
         spotifyLink: 'https://open.spotify.com/track/7lPN2DXiMsVn7XUKtOW1CS',
-        imageURL: ['https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a',]
+        imageURL: ['https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a']
     ),
     Song(
         name: 'Good 4 U',

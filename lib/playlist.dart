@@ -11,8 +11,6 @@ class SongPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Playlist'),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
         ),
         body: GridView.builder(
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
