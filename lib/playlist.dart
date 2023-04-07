@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:tugas4/song_dummy.dart';
 import 'package:tugas4/detail_page.dart';
 
-class SongPage extends StatelessWidget {
+class SongPage extends StatefulWidget {
   const SongPage({Key? key}) : super(key: key);
 
+  @override
+  State<SongPage> createState() => _SongPageState();
+}
+
+class _SongPageState extends State<SongPage> {
+  var songFavorite = <Song>[];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,7 +32,7 @@ class SongPage extends StatelessWidget {
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailPage(song: song))
+                      MaterialPageRoute(builder: (context) => DetailPage(song: song, favorite: songFavorite,))
                   );
                 },
                 child: GridTile(
@@ -58,3 +64,4 @@ class SongPage extends StatelessWidget {
     );
   }
 }
+

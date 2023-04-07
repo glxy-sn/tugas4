@@ -1,33 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:tugas4/song_dummy.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:favorite_button/favorite_button.dart';
 
 class DetailPage extends StatefulWidget {
   final Song song;
-  const DetailPage({Key? key, required this.song}) : super(key: key);
+  final List<Song> favorite;
+  const DetailPage({Key? key, required this.song, required this.favorite}) : super(key: key);
 
   @override
   State<DetailPage> createState() => _DetailPageState();
 }
 
 class _DetailPageState extends State<DetailPage> {
+  bool isFavorite = false;
+
+  setFavorite() {
+    setState(() {
+      isFavorite = !isFavorite;
+      if (isFavorite) {
+        widget.favorite.add(widget.song);
+      } else {
+        widget.favorite.remove(widget.song);
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.song.name),
         actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14.0),
-            child: FavoriteButton(
-              isFavorite: false,
-              iconSize: 36,
-              //iconDisabledColor: Colors.white,
-              valueChanged: (_isFavorite) {
-                print('Is Favorite : $_isFavorite');
+          IconButton(
+              onPressed: () {
+                setFavorite();
               },
+              icon: Icon(Icons.favorite,
+                  color: isFavorite ? Colors.red : Colors.grey),
             ),
-          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(4, 0, 14, 0),
+            child: IconButton(
+                onPressed: () {
+                  //launchUrl(widget.song.spotifyLink);
+                  print(widget.song.spotifyLink);
+                },
+                icon: const Icon(Icons.share)),
+          )
           // Padding(
           //   padding: const EdgeInsets.symmetric(horizontal: 14.0),
           //   child: Icon(Icons.favorite),

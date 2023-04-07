@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   material_dialogs: ^1.1.1
   favorite_button: ^0.0.4
+  url_launcher: ^6.0.10
 
 dev_dependencies:
   flutter_test:
