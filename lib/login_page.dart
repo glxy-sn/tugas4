@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           onPressed: (){
             String text = "";
-            if (username == "123200052" && password == "tiara") {
+            if (username == "tugas4" && password == "kelompok4") {
               //text = "Login Sukses Brooowww!";
               setState(() {
                 isLoginSuccess = true;
@@ -110,8 +110,8 @@ class _LoginPageState extends State<LoginPage> {
                   MaterialPageRoute(builder: (context) => Dashboard()),
                 );
               });
-            }else if (username != "123200052"){
-              if (password == "tiara"){
+            }else if (username != "tugas4"){
+              if (password == "kelompok4"){
                 setState(() {
                   isLoginSuccess = false;
                   text = "Username Salah";
@@ -127,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                 });
               }
 
-            }else if (password != "tiara"){
+            }else if (password != "kelompok4"){
               setState(() {
                 isLoginSuccess = false;
                 text = "Password Salah";
@@ -135,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                 pw = false;
               });
               //text = "Username atau Password Salah";
-            }else if (username != "123200052" && password != "tiara"){
+            }else if (username != "tugas4" && password != "kelompok4"){
               setState(() {
                 isLoginSuccess = false;
                 text = "Password Salah";
