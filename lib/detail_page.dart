@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas4/song_dummy.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:favorite_button/favorite_button.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 class DetailPage extends StatefulWidget {
   final Song song;
@@ -43,7 +42,7 @@ class _DetailPageState extends State<DetailPage> {
             padding: const EdgeInsets.fromLTRB(4, 0, 14, 0),
             child: IconButton(
                 onPressed: () {
-                  //launchUrl(widget.song.spotifyLink);
+                  // launchUrl(widget.song.spotifyLink);
                   print(widget.song.spotifyLink);
                 },
                 icon: const Icon(Icons.share)),
