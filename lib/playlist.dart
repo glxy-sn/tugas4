@@ -27,7 +27,7 @@ class _SongPageState extends State<SongPage> {
           ),
           itemCount: songList.length,
           itemBuilder: (context, index) {
-            final Song song = songList[index];
+            final song = songList[index];
             return Card(
               child: InkWell(
                 onTap: () {
@@ -53,6 +53,15 @@ class _SongPageState extends State<SongPage> {
                       style: TextStyle(
                         fontSize: 10,
                       ),
+                    ),
+                    trailing: IconButton(
+                      icon: Icon(song.isFavorite ? Icons.favorite : Icons.favorite_border),
+                        color: Colors.red,
+                      onPressed: (){
+                        setState(() {
+                          song.isFavorite = !song.isFavorite;
+                        });
+                      },
                     ),
                   ),
                 ),

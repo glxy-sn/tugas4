@@ -1,4 +1,5 @@
 class Song {
+    int id;
     String name;
     String artist;
     String releaseDate;
@@ -6,8 +7,11 @@ class Song {
     String about;
     List<String> imageURL;
     String spotifyLink;
+    bool isFavorite;
+
 
     Song({
+        required this.id,
         required this.name,
         required this.artist,
         required this.releaseDate,
@@ -15,11 +19,13 @@ class Song {
         required this.about,
         required this.imageURL,
         required this.spotifyLink,
+        this.isFavorite = false,
     });
 }
 
-var songList = [
+List<Song> songList = [
     Song(
+        id:1,
         name: 'Drivers License',
         artist: 'Olivia Rodrigo',
         releaseDate: '2021-01-08',
@@ -29,6 +35,7 @@ var songList = [
         imageURL: ['https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a']
     ),
     Song(
+        id: 2,
         name: 'Good 4 U',
         artist: 'Olivia Rodrigo',
         releaseDate: '2021-05-14',
@@ -38,6 +45,7 @@ var songList = [
         imageURL: ['https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a']
     ),
     Song(
+        id: 3,
         name: 'Levitating',
         artist: 'Dua Lipa(feat. DaBaby)',
         releaseDate: '2020-10-01',
@@ -47,6 +55,7 @@ var songList = [
         imageURL: ['https://i.scdn.co/image/ab67616d0000b27349caa4fc6f962057ba65576a']
     ),
     Song(
+        id: 4,
         name: 'Montero (Call Me By Your Name)',
         artist: 'Lil Nas X',
         releaseDate: '2021-03-26',
@@ -56,6 +65,7 @@ var songList = [
         imageURL: ['https://upload.wikimedia.org/wikipedia/en/b/bf/Lil_Nas_X_-_Montero.png']
     ),
     Song(
+        id: 5,
         name: 'Peaches',
         artist: 'Justin Bieber(feat. Daniel Caesar, Giveon)',
         releaseDate: '2021-03-19',
@@ -65,6 +75,7 @@ var songList = [
         imageURL: ['https://i.scdn.co/image/ab67616d0000b273e6f407c7f3a0ec98845e4431']
     ),
     Song(
+        id: 6,
         name: 'Blinding Lights',
         artist: 'The Weekend',
         releaseDate: '2019-11-29',
@@ -74,6 +85,7 @@ var songList = [
         imageURL: ['https://upload.wikimedia.org/wikipedia/en/e/e6/The_Weeknd_-_Blinding_Lights.png']
     ),
     Song(
+        id: 7,
         name: 'Dynamite',
         artist: 'BTS',
         releaseDate: '2020-08-21',
@@ -83,6 +95,7 @@ var songList = [
         imageURL: ['https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bts_Dynamite_album.svg/800px-Bts_Dynamite_album.svg.png']
     ),
     Song(
+        id: 8,
         name: 'Butter',
         artist: 'BTS',
         releaseDate: '2021-05-21',
@@ -92,6 +105,7 @@ var songList = [
         imageURL: ['https://upload.wikimedia.org/wikipedia/en/d/db/BTS_-_Butter.png']
     ),
     Song(
+        id: 9,
         name: 'Boy With Luv',
         artist: 'BTS',
         releaseDate: '2019-04-12',
@@ -101,6 +115,7 @@ var songList = [
         imageURL: ['https://i.scdn.co/image/ab67616d0000b27318d0ed4f969b376893f9a38f']
     ),
     Song(
+        id: 10,
         name: 'Blood Sweat & Tears',
         artist: 'BTS',
         releaseDate: '2016-10-10',
@@ -110,6 +125,7 @@ var songList = [
         imageURL: ['https://upload.wikimedia.org/wikipedia/en/3/3f/BTS%2C_Wings.jpg']
     ),
     Song(
+        id: 11,
         name: 'Spring Day',
         artist: 'BTS',
         releaseDate: '2017-02-13',
@@ -119,6 +135,7 @@ var songList = [
         imageURL: ['https://upload.wikimedia.org/wikipedia/vi/e/e4/YNWA_BTS_album.jpg']
     ),
     Song(
+        id: 12,
         name: 'Life Goes On',
         artist: 'BTS',
         releaseDate: '2020-11-20',

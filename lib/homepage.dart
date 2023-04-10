@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas4/anggota.dart';
+import 'package:tugas4/favorite.dart';
 import 'package:tugas4/playlist.dart';
 import 'package:tugas4/stopwatch.dart';
 
@@ -56,7 +57,12 @@ class _HomePageState extends State<HomePage> {
               height: 16.0,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Favorite()),
+                );
+              },
               child: Text('Favorite'),
             ),
           ],

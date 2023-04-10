@@ -3,6 +3,7 @@ import 'package:tugas4/login_page.dart';
 import 'package:material_dialogs/material_dialogs.dart';
 import 'package:material_dialogs/widgets/buttons/icon_button.dart';
 import 'package:material_dialogs/widgets/buttons/icon_outline_button.dart';
+import 'package:tugas4/penggunaan.dart';
 
 
 class Bantuan extends StatefulWidget {
@@ -22,8 +23,14 @@ class _Bantuan extends State<Bantuan> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HelpPage()),
+                );
+              },
               child: Text('Cara Penggunaan Aplikasi'),
+
             ),
             SizedBox(
               height: 16.0,

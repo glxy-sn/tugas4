@@ -28,6 +28,9 @@ import 'package:url_launcher/url_launcher.dart';
 class DetailPage extends StatefulWidget {
   final Song song;
   final List<Song> favorite;
+  //final Function onPressed;
+  //final bool isFavorite;
+
 
   //const DetailPage ({required this.buttonText, required this.url, this.song, this.favorite});
   const DetailPage({Key? key, required this.song, required this.favorite}) : super(key: key);
@@ -41,18 +44,9 @@ class _DetailPageState extends State<DetailPage> {
   bool isFavorite = false;
   String websiteUrl = "";
 
-  setFavorite() {
-    setState(() {
-      isFavorite = !isFavorite;
-      if (isFavorite) {
-        widget.favorite.add(widget.song);
-      } else {
-        widget.favorite.remove(widget.song);
-      }
-    });
-  }
-
   @override
+
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -60,7 +54,7 @@ class _DetailPageState extends State<DetailPage> {
         actions: [
           IconButton(
             onPressed: () {
-              setFavorite();
+              //setFavorite();
             },
             icon: Icon(Icons.favorite,
                 color: isFavorite ? Colors.red : Colors.grey),
