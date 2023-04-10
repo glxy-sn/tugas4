@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas4/song_dummy.dart';
-// import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailPage extends StatefulWidget {
   final Song song;
@@ -25,6 +25,10 @@ class _DetailPageState extends State<DetailPage> {
     });
   }
 
+  void _launchURL(_url) async {
+    if (!await launchUrl(_url)) throw 'Could not launch $_url';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,8 +45,8 @@ class _DetailPageState extends State<DetailPage> {
           Padding(
             padding: const EdgeInsets.fromLTRB(4, 0, 14, 0),
             child: IconButton(
-                onPressed: () {
-                  // launchUrl(widget.song.spotifyLink);
+                onPressed: () async {
+                  _launchURL(widget.song.spotifyLink);
                   print(widget.song.spotifyLink);
                 },
                 icon: const Icon(Icons.share)),
