@@ -7,22 +7,24 @@ class Favorite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('This is my jams'),
-            bottom: TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.favorite), text: 'Favorites',),
+        length: 1,
+        child: SafeArea(
+          child: Scaffold(
+            appBar: AppBar(
+              title: Text('This is my jams'),
+              bottom: TabBar(
+                tabs: [
+                  Tab(icon: Icon(Icons.favorite), text: 'Favorites',),
+                ],
+              ),
+            ),
+            body: TabBarView(
+              children: [
+                FavoriteList(),
               ],
             ),
           ),
-          body: TabBarView(
-            children: [
-              FavoriteList(),
-            ],
-          ),
-        ),
+        )
       );
   }
 }
