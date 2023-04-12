@@ -32,7 +32,7 @@ class _SongPageState extends State<SongPage> {
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailPage(song: song, favorite: songFavorite,))
+                      MaterialPageRoute(builder: (context) => DetailPage(song: song))
                   );
                 },
                 child: GridTile(
