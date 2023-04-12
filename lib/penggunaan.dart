@@ -40,7 +40,30 @@ class HelpPage extends StatelessWidget {
               ),
             ),
             Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie euismod nulla, sit amet semper mi blandit ac. Suspendisse eget feugiat enim. Nulla facilisi. Duis tincidunt elit nec enim dictum sagittis. Nam commodo commodo tellus sed posuere. Donec id nisi in tellus feugiat consectetur. Nam lacinia ligula nec orci facilisis, sed euismod libero rutrum. Integer sed odio id diam bibendum commodo vel et nunc.',
+              'Berikut ini adalah langkah-langkah untuk mengakses menu stopwatch dalam aplikasi mobile Kelompok 4:'
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              'Menghitung waktu maju dari nol',
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              ),
+            ),
+            Text(
+              '1. Pada halaman Menu Utama, klik menu Stopwatch \n'
+              '2. Setelah masuk ke halaman menu Stopwatch, ketuk tombol Start'
+            ),
+            SizedBox(height: 8.0),
+            Text(
+              'Mengubah stopwatch yang berjalan',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold
+              ),
+            ),
+            Text(
+                '1. Untuk menjeda stopwatch yang berjalan, ketuk tombol Stop \n'
+                '2. Untuk melanjutkan stopwatch, ketuk tombol Start kembali \n'
+                '3. Untuk mereset stopwatch, ketuk tombol Reset'
             ),
             SizedBox(height: 8.0),
             Text(
