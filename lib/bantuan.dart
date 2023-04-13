@@ -29,7 +29,7 @@ class _Bantuan extends State<Bantuan> {
                   MaterialPageRoute(builder: (context) => HelpPage()),
                 );
               },
-              child: Text('Cara Penggunaan Aplikasi'),
+              child: Text('Penggunaan Aplikasi'),
 
             ),
             SizedBox(

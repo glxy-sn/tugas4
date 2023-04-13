@@ -45,18 +45,17 @@ class _LoginPageState extends State<LoginPage> {
           username = value;
         },
         decoration: InputDecoration(
-          hintText: 'Username',
           labelText: 'Username',
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: BorderSide(
-              color: (id) ? Colors.green : Colors.red,
+              color: (id) ? Colors.indigo : Colors.red,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: BorderSide(
-                color: Colors.blue
+                color: Colors.indigo
             ),
           ),
         ),
@@ -72,18 +71,17 @@ class _LoginPageState extends State<LoginPage> {
         },
         obscureText: true,
         decoration: InputDecoration(
-          hintText: 'Password',
           labelText: 'Password',
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: BorderSide(
-              color: (pw) ? Colors.green : Colors.red,
+              color: (pw) ? Colors.indigo : Colors.red,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: BorderSide(
-                color: Colors.blue
+                color: Colors.indigo
             ),
           ),
         ),
@@ -96,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
         //width: MediaQueryData.of(context).size.width,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              primary: (isLoginSuccess) ? Colors.green : Colors.red
+              primary: (isLoginSuccess) ? Colors.indigo : Colors.red
           ),
           onPressed: (){
             String text = "";

@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
                   MaterialPageRoute(builder: (context) => Anggota()),
                 );
               },
-              child: Text('Daftar anggota'),
+              child: Text('Daftar Anggota'),
             ),
             SizedBox(
               height: 16.0,
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                   MaterialPageRoute(builder: (context) => StopwatchPage()),
                 );
               },
-              child: Text('Aplikasi stopwatch'),
+              child: Text('Stopwatch'),
             ),
             SizedBox(
               height: 16.0,

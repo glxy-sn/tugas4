@@ -7,34 +7,48 @@ class StopwatchPage extends StatefulWidget {
 }
 
 class _StopwatchPageState extends State<StopwatchPage> {
-  Timer _timer = Timer.periodic(Duration(milliseconds: 10), (timer){});
-  int _elapsedTime = 0;
-  bool _isRunning = false;
+  // declare the variables
+  Stopwatch _stopwatch = Stopwatch();
+  late Timer _timer;
+  Duration _elapsedTime = Duration.zero;
 
-  void _startTimer() {
-    _timer = Timer.periodic(Duration(milliseconds: 10), (timer) {
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer.periodic(Duration(milliseconds: 100), _onTimerTick);
+  }
+
+  void _onTimerTick(Timer timer) {
+    if (_stopwatch.isRunning) {
       setState(() {
-        _elapsedTime += 10;
+        _elapsedTime = _stopwatch.elapsed;
       });
-    });
-  }
-
-  void _stopTimer() {
-    _timer.cancel();
-  }
-
-  void _resetTimer() {
-    setState(() {
-      _elapsedTime = 0;
-      _isRunning = false;
-      _stopTimer();
-    });
+    }
   }
 
   @override
   void dispose() {
     _timer.cancel();
     super.dispose();
+  }
+
+  void _startTimer() {
+    setState(() {
+      _stopwatch.start();
+    });
+  }
+
+  void _stopTimer() {
+    setState(() {
+      _stopwatch.stop();
+    });
+  }
+
+  void _resetTimer() {
+    setState(() {
+      _stopwatch.reset();
+      _elapsedTime = Duration.zero;
+    });
   }
 
   @override
@@ -48,36 +62,36 @@ class _StopwatchPageState extends State<StopwatchPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Elapsed Time: ${(_elapsedTime / 1000).toStringAsFixed(2)} s',
-              style: TextStyle(fontSize: 24),
+              '${_elapsedTime.inMinutes}:${(_elapsedTime.inSeconds % 60).toString().padLeft(2, '0')}.${(_elapsedTime.inMilliseconds % 1000 ~/ 10).toString().padLeft(2, '0')}',
+              style: TextStyle(
+                fontSize: 48.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 32.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  onPressed: _isRunning ? null : () {
-                    setState(() {
-                      _isRunning = true;
-                    });
-                    _startTimer();
-                  },
-                  child: Text('Start'),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: ElevatedButton(
+                    onPressed: _startTimer,
+                    child: Text('Start'),
+                  ),
                 ),
-                SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: _isRunning ? () {
-                    setState(() {
-                      _isRunning = false;
-                    });
-                    _stopTimer();
-                  } : null,
-                  child: Text('Stop'),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: ElevatedButton(
+                    onPressed: _stopTimer,
+                    child: Text('Stop'),
+                  ),
                 ),
-                SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: _elapsedTime > 0 ? _resetTimer : null,
-                  child: Text('Reset'),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: ElevatedButton(
+                    onPressed: _resetTimer,
+                    child: Text('Reset'),
+                  ),
                 ),
               ],
             ),
