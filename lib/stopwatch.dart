@@ -9,13 +9,13 @@ class StopwatchPage extends StatefulWidget {
 class _StopwatchPageState extends State<StopwatchPage> {
   // declare the variables
   Stopwatch _stopwatch = Stopwatch();
-  late Timer _timer;
+  late Timer _timer; // null safety
   Duration _elapsedTime = Duration.zero;
 
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(Duration(milliseconds: 100), _onTimerTick);
+    _timer = Timer.periodic(Duration(milliseconds: 60), _onTimerTick);
   }
 
   void _onTimerTick(Timer timer) {
@@ -68,7 +68,7 @@ class _StopwatchPageState extends State<StopwatchPage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 32.0),
+            SizedBox(height: 28.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
