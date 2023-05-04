@@ -21,7 +21,7 @@ class _StopwatchPageState extends State<StopwatchPage> {
   void _onTimerTick(Timer timer) {
     if (_stopwatch.isRunning) {
       setState(() {
-        _elapsedTime = _stopwatch.elapsed;
+        _elapsedTime = _stopwatch.elapsed; // total elapsed time
       });
     }
   }
@@ -62,7 +62,7 @@ class _StopwatchPageState extends State<StopwatchPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '${_elapsedTime.inMinutes}:${(_elapsedTime.inSeconds % 60).toString().padLeft(2, '0')}.${(_elapsedTime.inMilliseconds % 1000 ~/ 10).toString().padLeft(2, '0')}',
+              '${(_elapsedTime.inHours).toString().padLeft(2, '0')}:${(_elapsedTime.inMinutes % 60).toString().padLeft(2, '0')}:${(_elapsedTime.inSeconds % 60).toString().padLeft(2, '0')}.${(_elapsedTime.inMilliseconds % 1000 ~/ 10).toString().padLeft(2, '0')}',
               style: TextStyle(
                 fontSize: 48.0,
                 fontWeight: FontWeight.bold,
